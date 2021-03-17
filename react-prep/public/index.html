@@ -2,20 +2,196 @@
 <!DOCTYPE html>
 
 <html ng-app="TestApp">
-
+<!-- optional ... -->
 <head>
+    <title>Atlassian practise</title> 
+    <!-- internal css -->
+    <link rel="stylesheet" href="../css/stylesheet1.css">
 </head>
+<!--  -->
+<body ng-controller="testCtrl" src="App.js">
+    <div class="box-1">
+        <h1>Hi, date time is: </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore magni harum atque dolore accusantium odio, ab dolorum error quidem nisi beatae quasi praesentium ratione eligendi corporis natus corrupti inventore optio.</p>
 
-<body ng-controller="testCtrl">
+
+        <!-- <table>
+            <thead></thead>
+            <tbody></tbody>
+        </table> -->
+    </div>
+    
+
+    <br>
+    <form action="process.php" method="GET">
+        <label></label>
+        <input type="text" name="firstName">
+    </form>
 </body>
-
 
 </html>
 
+<!-- what does this do? -->
 <div id="root"></div>
+<div style="margin-top:500px"></div>
+
+<!-- <div class="bar-container">
+    <div class="bar" ></div>
+</div> -->
 
 
-<div id="app">
-    <h1>Hello World</h1>
-    <input type="">
-</div>
+<pre id="log"></pre>
+<!-- attruibyes -> key/balue pairs -->
+
+<!-- actual JS should be in this section -->
+<!-- string -> '' or "" -->
+<script>
+
+// To display console log on main webpage
+(function () {
+    var old = console.log;
+    var logger = document.getElementById('log');
+    console.log = function () {
+        for (var i = 0; i < arguments.length; i++) {
+            if (typeof arguments[i] == 'object') {
+            logger.innerHTML += (JSON &&
+                JSON.stringify ? JSON.stringify(arguments[i], undefined, 2) : arguments[i]) + '<br />';
+            } else {
+            logger.innerHTML
+                += arguments[i] + '<br />';
+            }
+        }
+    }
+})();
+
+var today = new Date();
+var display = today.getFullYear() + '-' + (today.getMonth()+1) + '-' +today.getDate();
+console.log(display);
+
+
+// practise qs
+
+// var ordered = [1,2,3,4,5];
+// var unordered = [1, 7, 3, 4, 5];
+
+// var one = [1];
+
+// function isSorted(list){
+
+//     if(list.length === 1){
+//         console.log("true");
+//         return true;
+//     }else{
+
+//         var current;
+//         var next;
+//         for(i = 0; i< list.length; i++){
+            
+//             current = list[i];
+
+//             if(i<list.length){
+//                 // incrementing the next value
+//                 next = list[i+1];
+//             }
+
+//             if(current > next){
+//                 // value is wrong order
+//                 console.log("false");
+//                 return false;
+//             }else if(current === next){
+//                 // landed on last value in the order
+//                 console.log("true");
+//                 return true;
+//             }
+//             else{
+//                 // console.log("true");
+//                 // return true;
+//             }
+
+//         }
+        
+//     }
+//     console.log("true");
+//     return true;
+
+
+// }
+
+// isSorted(ordered);
+// isSorted(unordered);
+// isSorted(one);
+
+
+//filter -> good one shoud try
+// function filter2(list, foo){
+//     for(i = 0, i< list.length, i++){
+//         if(condition(a,b) == true){
+//             // value is correct
+
+//         }else{
+
+//         }
+//     }
+
+// }
+
+// reduce([1, 2, 3, 4], (a, b) => a + b, 0) // 10
+
+// reverse
+// var eg = 'nkjfkj3bwkj'
+// console.log(eg.length)
+// function reverse1(list){
+//     var listicle = new Array(list.length);
+
+//     for(i = 0; i< list.length; i++){
+//         listicle[i] = list.charAt(list.length - i -1);
+//         // console.log(list.charAt(list.length-i));
+//     }
+    
+//     //console.log(JSON.stringify(listicle));
+// } 
+
+// reverse1(eg);
+
+// up to q8
+
+// closure problem
+// for (var i = 0; i < 4; i++) {
+//     setTimeout(console.log(i), 0)
+// }
+
+
+// let dog = {
+//     name: 'doggo',
+//     sayName() {
+//         console.log(this.name)
+//     }
+// }
+
+// let sayName = dog.sayName()
+
+
+// function Dog(name) {
+//     this.name = name,
+//     bark()= function(){
+//         console.log(this.name + ' says woof');
+
+//     }
+// }
+
+// let fido = new Dog('fido')
+// fido.bark();
+// fido.bark()
+
+
+
+
+//sleep(1000);
+//const cannot be reassigned
+//setTimeout(func, 2000)
+
+
+// opens thing on new page
+//href ==== target="_blank"
+
+</script>

@@ -10,12 +10,19 @@ export default function App() {
   );
 }
 
-import function Applet(){
+// TESTING OUT
+var a = 0;
+b = 9 + 1; // var
+var st = "i am a string";
+var stringg = "hello" + st + "hhehe";
+console.log(a);
+//.length -> gets string length
 
-  return(
-    <div>
 
-    </div>
-  )
 
-}
+// header
+
+// container
+// output 
+
+// script tags
